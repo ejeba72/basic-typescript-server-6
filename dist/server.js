@@ -8,12 +8,16 @@ const path_1 = __importDefault(require("path"));
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = require("dotenv");
 const dev_route_1 = require("./routes/dev.route");
+const user_route_1 = require("./routes/user.route");
 // import { publicRouter } from './routes/public.route';
 (0, dotenv_1.config)();
 const app = (0, express_1.default)();
 const PORT = parseInt(process.env.PORT);
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
 // app.use('/public', publicRouter);
+app.use('/users', user_route_1.userRouter);
 app.use('/dev', dev_route_1.devRoute);
 app.listen(PORT, () => {
     console.log(`Server is attentively listening for requests @ http://127.0.0.1:${PORT}`);
