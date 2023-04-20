@@ -1,13 +1,17 @@
 // I perceive it is redundant to explicitly indicate the types in an express server, but I'm doing so for the sake of learning TypeScript as well as deepen my understanding of the various data types.
 
+import path from 'path';
 import express, { Application } from 'express';
 import { config } from 'dotenv';
 import { devRoute } from './routes/dev.route';
+// import { publicRouter } from './routes/public.route';
 
 config();
 const app: Application = express();
 const PORT: number = parseInt(process.env.PORT as string);
 
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use('/public', publicRouter);
 app.use('/dev', devRoute);
 
 app.listen(PORT, (): void => {
