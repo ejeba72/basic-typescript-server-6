@@ -2,13 +2,13 @@
   "name": "basic-typescript-server-5",
   "version": "1.0.0",
   "description": "Setting up nodejs server with TypeScript.",
-  "main": "server.js",
+  "main": "index.js",
   "repository": "git@github.com:ejeba72/basic-typescript-server-5.git",
   "author": "Emmanuel Eni <eejeba@gmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "node server.js",
-    "dev": "tsc -w & nodemon dist/server.js"
+    "start": "node index.js",
+    "dev": "tsc -w & nodemon dist/index.js"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

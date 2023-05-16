@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Login Page</h1>
+
+
+    <form action="http://127.0.0.1:1111/api/v1/users/login" method="post" enctype="multipart/form-data">
+        <div>
+            <div>
+                <label for="usrname">Enter your username below:</label>
+            </div>
+            <br>
+            <input name="username" type="text" id="usrname" placeholder="Enter your username here" value="Mr Anderson">
+        </div>
+        <br>
+        <input name="favColor" type="color" placeholder="Enter your favourite colour" required>
+        <br>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="1" max="200" step="0.5">
+        <br>
+        <br>
+        <label for="tel">Phone Number:</label>
+        <input type="tel" name="tel" id="tel" placeholder="enter your phone number">
+        <br>
+        <br>
+        Gender:
+        <br>
+        <label for="male">male:</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="female">female:</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <br>
+        <br>
+        <label for="nationality">Nationality: </label>
+        <select name="nationality" id="nationality" multiple>
+            <option value="Nigeria">Nigeria</option>
+            <option value="United States">United States</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Canada" label="Canada">Canada</option>
+            <option value="others">others</option>
+        </select>
+        <br><br>
+        <textarea name="bio" id="bio" placeholder="Tell us about yourself, briefly ofcourse! ;)"></textarea>
+        <br><br>
+        <label for="file">Upload a File</label>
+        <input type="file" name="file" id="file">
+        <br><br>
+        <button type="reset">Reset the above fields</button>
+        <button type="submit">Click here to submit</button>
+    </form>
+    <br><br><br><br><br>
+
+
+
+    <div>
+        <form action="http://127.0.0.1:1111/api/v1/users/login" method="post">
+            <div>
+                <label>Enter your name below:</label>
+            </div>
+            <input name="freestyle">
+        </form>
+    </div>
+
+    <!-- <form action="127.0.0.1:1111/api/v1/users/login" method="post">
+        <p>Enter your email and password</p>
+        <div>
+            <label for="">email</label>
+            <input name="email" type="text">
+        </div>
+        <div>
+            <label for="">password</label>
+            <input name="password" type="text">
+        </div>
+        <button type="submit">Submit</button>
+    </form> -->
+</body>
+</html>

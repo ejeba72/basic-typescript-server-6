@@ -1,7 +1,7 @@
 "use strict";
 // 16:12 thu apr20 2023
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signup = void 0;
+exports.login = exports.signup = void 0;
 function signup(req, res) {
     try {
         console.log(req.body);
@@ -19,3 +19,20 @@ function signup(req, res) {
     }
 }
 exports.signup = signup;
+function login(req, res) {
+    try {
+        console.log(req.body);
+        res.status(201).send(req.body);
+    }
+    catch (err) {
+        if (err instanceof Error) {
+            console.error(err.message);
+            res.status(500).send(err);
+        }
+        else {
+            console.error(err);
+            res.status(500).send(err);
+        }
+    }
+}
+exports.login = login;
